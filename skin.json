@@ -1,0 +1,54 @@
+{
+	"name": "WikiNine",
+	"version": "1.0",
+	"author": "3#",
+	"url": "https://www.mediawiki.org/wiki/Skin:WikiNine",
+	"descriptionmsg": "wikinine-desc",
+	"namemsg": "skinname-wikinine",
+	"license-name": "CC0-1.0",
+	"type": "skin",
+	"ValidSkinNames": {
+		"wikinine": "WikiNine"
+	},
+	"MessagesDirs": {
+		"WikiNine": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.wikinine": {
+			"class": "ResourceLoaderSkinModule",
+			"styles": {
+				"resources/libraries/normalise.css": {
+					"media": "screen"
+				},
+				"resources/screen-common.less": {
+					"media": "screen"
+				},
+				"resources/screen-desktop.less": {
+					"media": "screen and (min-width: 751px)"
+				},
+				"resources/screen-mobile.less": {
+					"media": "screen and (max-width: 750px)"
+				},
+				"resources/print.css": {
+					"media": "print"
+				}
+			}
+		},
+		"skins.wikinine.js": {
+			"scripts": [
+				"resources/main.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "WikiNine"
+	},
+	"AutoloadClasses": {
+		"SkinWikiNine": "includes/SkinWikiNine.php",
+		"WikiNineTemplate": "includes/WikiNineTemplate.php"
+	},
+	"manifest_version": 1
+}

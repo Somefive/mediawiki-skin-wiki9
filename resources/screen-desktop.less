@@ -1,0 +1,130 @@
+/* Styles appear on displays over 750 pixels wide */
+
+@import "variables.less";
+
+#site-navigation {
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	li {
+		padding-right: 1em;
+		display: inline-block;
+	}
+}
+
+.index-page {
+	h2::before h2::after {
+		content: '';	
+	}
+}
+
+.index-page.mw-body {
+	.firstHeading, .toc {
+		display: none !important;
+	}
+	h1 {
+		text-align: center;
+		+p {
+			text-align: center;
+		}
+	}
+	.category-block-H2 {
+		@media screen and (min-width: 768px) {
+			width: calc(~"100% - 40px");
+		}
+		@media screen and (min-width: 992px) {
+			width: calc(~"50% - 40px");
+		}
+		@media screen and (min-width: 1200px) {
+			width: calc(~"33% - 40px");
+		}
+		float: left;
+		border: 2px solid transparent;
+		border-radius: 30px;
+		margin: 10px;
+		padding: 10px;
+		text-align: center;
+		height: 400px;
+		overflow-y: hidden;
+		transition: all 0.5s;	
+		li {
+			list-style: none;
+			a:hover::before {
+				margin-right: 5px;
+			}
+			a:hover::after {
+				margin-left: 5px;
+			}
+			a::before {
+				content: '<';
+			}
+			a::after {
+				content: '>';
+			}
+			a::before, a::after {
+				opacity: 0;
+				transition: 0.25s ease-in-out 0s;
+				margin: 0;
+			}
+			a:hover {
+				text-decoration: none;
+			}
+			a:hover::before, a:hover::after {
+				opacity: 1;
+			}
+		}
+		ul {
+			margin: 0;
+		}
+		span.mw-headline {
+			// padding-left: 50px;
+		}
+		h2 {
+			border-radius: 30px;
+		}
+	}
+	.category-block-H2:hover {
+		cursor: pointer;
+		border: 2px solid rgba(85, 33, 135, 0.5);
+	}
+	.category-block-H2.expand {
+		height: auto;
+		border: 2px solid rgba(85, 33, 135, 0.2);
+	}
+	.category-block-H2.expand:hover {
+		border: 2px solid rgba(85, 33, 135, 0.5);
+	}
+}
+#mw-navigation {
+	@left_dis: 20px;
+	position: fixed;
+	border-color: black;
+	border-style: solid;
+	border-width: 3px 3px 3px 0px;
+	top: 250px;
+	left: @left_dis;
+	transform: translate(-100%, -50%);
+	transition: all 1s;
+	background: white;
+	border-radius: 0 @left_dis @left_dis 0;
+	padding: 15px 15px @left_dis 15px;
+	div.folder {
+		position: absolute;
+		height: 100%;
+		width: @left_dis;
+		right: 0;
+		top: 0;
+		border-radius: 0 @left_dis @left_dis 0;
+		div {
+			position: absolute;
+			top: 50%;
+			right: 50%;
+			transform: translate(50%, -50%);
+		}
+	}
+}
+#mw-navigation:hover {
+	left: 0;
+	transform: translate(0, -50%);
+}

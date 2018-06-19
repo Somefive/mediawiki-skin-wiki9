@@ -28,7 +28,7 @@ class WikiNineTemplate extends BaseTemplate {
 				Html::rawElement( 'div', [ 'id' => 'siteSub' ],
 					$this->getMsg( 'tagline' )->parse()
 				) .
-				Html::rawElement( 'div', [ 'class' => $this->isIndexPage() ? 'mw-body-content index-page' : 'mw-body-content' ],
+				Html::rawElement( 'div', [ 'class' => $this->isIndexPage() ? 'mw-body-content index-page' : 'mw-body-content', 'id' => 'content' ],
 					Html::rawElement( 'div', [ 'id' => 'contentSub' ],
 						$this->getPageSubtitle() .
 						Html::rawelement(
